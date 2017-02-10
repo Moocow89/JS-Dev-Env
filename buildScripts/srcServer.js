@@ -1,3 +1,4 @@
+/*global import export */
 import express from 'express';
 import path from 'path';
 import open from 'open';
@@ -5,7 +6,7 @@ import webpack from 'webpack';
 import config from '../webpack.config.dev';
 
 
-const port = 3000;
+const port = process.env.PORT;
 const app = express();
 const compiler = webpack(config);
 
@@ -22,7 +23,8 @@ app.get('/', function(req, res) {
 app.listen(port, function(err) {
     if (err) {
         console.log(err);
-    } else {
+    }
+    else {
         open('http://localhost:' + port);
     }
 });
