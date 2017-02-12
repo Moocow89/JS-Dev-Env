@@ -8,7 +8,7 @@ export function getUsers() {
     return get('users');
 }
 
-export function delteUsers(id) {
+export function deleteUsers(id) {
     return del(`users/${id}`);
 }
 
